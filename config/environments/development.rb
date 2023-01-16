@@ -41,6 +41,13 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  # https://guides.rubyonrails.org/asset_pipeline.html
+  # Part 3
+  config.assets.unknown_asset_fallback = false
+  config.assets.digest = false
+  config.assets.debug = true
+  #config.assets.compile = true
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
@@ -67,4 +74,6 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  config.serve_static_assets = false
 end

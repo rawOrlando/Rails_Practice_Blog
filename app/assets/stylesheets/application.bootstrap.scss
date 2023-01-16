@@ -1,2 +1,50 @@
 @import 'bootstrap/scss/bootstrap';
-@import 'bootstrap-icons/font/bootstrap-icons';
+
+
+.navbar {
+  background-color: black !important;
+}
+
+.nav-link {
+  color: white !important
+}
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#home-container {
+  margin-top: 25px;
+}
+
+
+.home-container{
+  background-image: asset-url('assets/fish-repeat.png');
+}
+
+.jumbotron {
+  background-image: url('alpha-image.jpg');
+  background-position: center center;
+  background-repeat: repeat;
+  background-size: cover;
+  height: 525px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+  background-color: lightgrey;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}
