@@ -1,15 +1,8 @@
 <div class="container">
-  <% if @article.errors.any? %>
-    <h2>The following errors prevented the article from being saved</h2>
-    <ul>
-    <% @article.errors.fullmessages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-    </ul>
-  <% end %>
 
   <div class="row justify-content-center">
     <div class="col-10">
+      <%= render 'shared/errors'%>
       <%= form_with(model: @article, class: "form-horizontal shadow-lg mb-3 p-3 bg-info rounded", local: true) do |form| %>
         <div class="input-group mb-3 pr-5 pt-3 row">
         	<%= form.label :title, class: "col-2 pl-4 col-form-label text-light" %>
