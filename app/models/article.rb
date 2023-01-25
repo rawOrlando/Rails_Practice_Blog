@@ -1,4 +1,5 @@
 class Article < ApplicationRecord
+	belongs_to :user
 	# First one writen like a method to remind me what 
 	# it is. Secound way of writing it is standard in ruby.
 	validates(:title, presence: true, length: {minimum: 6, maximum: 100})
