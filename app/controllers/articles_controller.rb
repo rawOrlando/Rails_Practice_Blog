@@ -18,6 +18,9 @@ class ArticlesController < ApplicationController
 
 	def create
 		@article = Article.new(article_params_whitelist)
+		@article.user = current_user
+		puts "hi"
+		puts current_user
 		if @article.save
 			flash[:notice] = "Article save correctly."
 			redirect_to article_path(@article)
