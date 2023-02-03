@@ -40,8 +40,15 @@ class ArticlesController < ApplicationController
 		end
 	end
 
-	def destory
-		article.destory
+	def destroyish
+		puts "Here"
+		puts params
+		@article = Article.find(params[:format])
+		if current_user != @article.user
+      flash[:alert] = "You can only edit or delete your own article"
+      redirect_to @article
+    end
+		@article.destroy
 		redirect_to articles_path 
 	end
 

@@ -4,11 +4,14 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "pages#home"
   get "about", to: "pages#about"
-  resources :articles, only: [:show, :index, :new, :create, :edit, :update, :destory]
+  resources :articles, only: [:show, :index, :new, :create, :edit, :update, :destroy]
+  # destroy not working right so adding this routing work around
+  get "destroy_article", to: 'articles#destroyish'
   get "signup", to: 'users#new'
   resources :users, except: [:new]
+  get "destroy_user", to: 'users#destroy'
   get "login", to: 'sessions#new'
   post "login", to: 'sessions#create'
-  delete "login", to: 'sessions#destroy'
+  get "logout", to: 'sessions#destroy'
 
 end
