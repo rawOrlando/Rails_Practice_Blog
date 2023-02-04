@@ -38,6 +38,18 @@ class UsersController < ApplicationController
 
   end
 
+  def destroyish
+    @user = User.find(params[:format])
+    if current_user != @user
+      flash[:alert] = "You can only edit or delete your own profile"
+      redirect_to @user
+    end
+    @user.destroy
+    session[:user_id] = nil
+    flash[:notice] = "Account and all associated articles successfully deleted"
+    redirect_to articles_path
+  end
+
   private
   def user_params
     params.require(:user).permit(:username, :email, :password)

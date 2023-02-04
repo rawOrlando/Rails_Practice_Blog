@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get "destroy_article", to: 'articles#destroyish'
   get "signup", to: 'users#new'
   resources :users, except: [:new]
-  get "destroy_user", to: 'users#destroy'
+  get "destroy_user", to: 'users#destroyish'
   get "login", to: 'sessions#new'
   post "login", to: 'sessions#create'
   get "logout", to: 'sessions#destroy'
