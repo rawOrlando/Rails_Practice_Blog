@@ -1,4 +1,4 @@
 class ArticleCategory < ApplicationRecord
-  belongs_to :ArticleCategory
-  belongs_to :ArticleCategory
+  belongs_to :article
+  belongs_to :category
 end
